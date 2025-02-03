@@ -1,0 +1,45 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+  
+.login-card {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+  
+.login-card h1, .login-card h2, .login-card h3 {
+    margin: 10px 0;
+}
+  
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+  
+.google-signin-btn {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto; /* Added margin to prevent overlapping */
+}
+  
+.google-signin-btn img {
+    margin-right: 10px;
+}
+  
+.google-signin-btn:hover {
+    background-color: #357ae8;
+}

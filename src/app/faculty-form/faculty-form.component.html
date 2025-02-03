@@ -1,0 +1,77 @@
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <div class="title-container">
+      <span class="title">Wiki Code</span>
+    </div>
+    <div class="notifications">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
+        alt="Notifications Icon"
+        class="notification-icon"
+      />
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="nav-links">
+      <a routerLink="/main-page" routerLinkActive="active" (click)="onMainPageClick()" >Main Page</a>
+      <a routerLink="/faculty-form" routerLinkActive="active">Form</a>
+      <a routerLink="/viewcode" routerLinkActive="active" (click)="onFacultydetails()">Details</a>
+      <a routerLink="/logout" routerLinkActive="active"  (click)="logOut()">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h2 class="faculty-form-heading">Faculty Course Form</h2>
+<div class="faculty-form-container">
+  <form #facultyForm="ngForm" (ngSubmit)="onSubmit(facultyForm)">
+    <div class="form-group">
+      <label for="subject">Course Title:</label>
+      <textarea id="subject" name="subject" class="form-control" rows="4" required [(ngModel)]="subject"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="courseIntro">Introduction to the Course:</label>
+      <textarea id="courseIntro" name="courseIntro" class="form-control" rows="4" required [(ngModel)]="courseIntro"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="courseObjectives">Course Objectives:</label>
+      <textarea id="courseObjectives" name="courseObjectives" class="form-control" rows="4" required [(ngModel)]="courseObjectives"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="courseOutcomes">Course Outcomes (COs):</label>
+      <textarea id="courseOutcomes" name="courseOutcomes" class="form-control" rows="4" required [(ngModel)]="courseOutcomes"></textarea>
+    </div>
+
+    <h3>Lesson Plan</h3>
+    <table class="lesson-plan-table">
+      <thead>
+        <tr>
+          <th>Unit No.</th>
+          <th>Topic</th>
+          <th>Lecture Material (.pdf)</th>
+          <th>Lecture Video (drive link)</th>
+          <th>Discourse Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="number" class="form-control" required /></td>
+          <td><input type="text" class="form-control" required /></td>
+          <td><input type="file" accept=".pdf" class="form-control" required /></td>
+          <td><input type="url" class="form-control" required /></td>
+          <td><input type="url" class="form-control" required /></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</div>
+</main>
+</div>

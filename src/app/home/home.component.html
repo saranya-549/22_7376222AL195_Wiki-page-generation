@@ -1,0 +1,55 @@
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <!-- Logo -->
+    <!-- <div class="logo">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjae3YfivZaByiJuy55E4JBoxXNj0jpqhH_RsLjJk_vS6FhNzWOi8xWbthyTi3IFYcPF8&usqp=CAU"
+        alt="Wiki Code Logo"
+      />
+    </div> -->
+
+    <!-- Title -->
+    <div class="title-container">
+      <span class="title">Wiki Code</span>
+    </div>
+
+    <!-- Notifications -->
+    <div class="notifications">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
+        alt="Notifications Icon"
+        class="notification-icon"
+        (click)="toggleNotifications()"
+      />
+      <div class="notifications-menu" *ngIf="isNotificationsVisible">
+        <p>No new messages.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="nav-links">
+      <a routerLink="/main-page" routerLinkActive="active">Main Page</a>
+      <a
+        routerLink="/faculty-form"
+        routerLinkActive="active"
+        (click)="onAdminClick()"
+        >Form</a
+      >
+      <a routerLink="/viewcode" routerLinkActive="active" (click)="onAdmindetails()">Details</a>
+      <a routerLink="/details" routerLinkActive="active" (click)="onClickViewCode()">View Code</a>
+      <a routerLink="/logout" routerLinkActive="active"  (click)="logOut()">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Wiki Page Code Generator Welcomes You</h1>
+    <h2>Streamline the course pages</h2>
+    <button (click)="onAdminClick()" class="course-details-btn">
+      Go To Form
+    </button>
+  </main>
+</div>

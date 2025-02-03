@@ -1,0 +1,54 @@
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <div class="title-container">
+      <span class="title">Wiki Code</span>
+    </div>
+
+    <!-- Notifications -->
+    <div class="notifications">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
+        alt="Notifications Icon"
+        class="notification-icon"
+        (click)="toggleNotifications()"
+      />
+      <div class="notifications-menu" *ngIf="isNotificationsVisible">
+        <p>No new messages.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="nav-links">
+      <a routerLink="/main-page" routerLinkActive="active" (click)="onMainPageClick()">Main Page</a>
+      <a
+        routerLink="/faculty-form"
+        routerLinkActive="active"
+        (click)="onAdminClick()"
+        >Form</a
+      >
+      <a routerLink="/viewcode" routerLinkActive="active" (click)="onAdmindetails()">Details</a>
+      <a
+        routerLink="/details"
+        routerLinkActive="active"
+        (click)="onClickViewCode()"
+        >View Code</a
+      >
+      <a routerLink="/logout" routerLinkActive="active" (click)="logOut()"
+        >Logout</a
+      >
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Generated Code</h1>
+    <h2>Here is the code you have generated:</h2>
+    <div class="code-box">
+      <pre><code>{{ generatedCode }}</code></pre>
+    </div>
+    <button (click)="downloadCode()" class="download-btn">Download Code</button>
+  </main>
+</div>

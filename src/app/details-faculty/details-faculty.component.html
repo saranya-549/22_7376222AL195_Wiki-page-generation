@@ -1,0 +1,77 @@
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <!-- Title -->
+    <div class="title-container">
+      <span class="title">Wiki Code</span>
+    </div>
+
+    <!-- Notifications -->
+    <div class="notifications">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
+        alt="Notifications Icon"
+        class="notification-icon"
+        (click)="toggleNotifications()"
+      />
+      <div class="notifications-menu" *ngIf="isNotificationsVisible">
+        <p>No new messages.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="nav-links">
+      <a routerLink="/main-page" routerLinkActive="active" (click)="onMainPageClick()" >Main Page</a>
+      <a
+        routerLink="/faculty-form"
+        routerLinkActive="active"
+        (click)="onFacultyClick()"
+        >Form</a
+      >
+      <a routerLink="/details" routerLinkActive="active">Details</a>
+      <a routerLink="/logout" routerLinkActive="active"  (click)="logOut()">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Course Details</h1>
+    <h2>Search and view course information</h2>
+
+    <!-- Search Box -->
+    <div class="search-container">
+      <input type="text" placeholder="Search" [(ngModel)]="searchText" />
+      <button (click)="applyFilter()">🔍</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Unit No.</th>
+            <th>Topic</th>
+            <th>Lecture Material</th>
+            <th>Discourse Link</th>
+            <th >Remarks</th>
+            <th >Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of filteredProjects">
+            <td>{{ project.subject }}</td>
+            <td>{{ project.unitno }}</td>
+            <td>{{ project.topic }}</td>
+            <td>{{ project.lecturematerial }}</td>
+            <td>{{ project.discourselink }}</td>
+            <td>{{ project.remarks }}</td>
+            <td (click)="onEdit()" style="text-decoration: underline;">{{ project.edit }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
